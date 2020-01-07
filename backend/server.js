@@ -8,7 +8,6 @@ const cors = require("cors");
 const morgan = require("morgan");
 const logger = require("./src/logging/logger");
 
-
 const app = express();
 const port = config.server.port || 5000;
 
@@ -19,7 +18,11 @@ app.use(express.json());
 app.use(morgan("combined", { stream: logger.stream }));
 
 app.use((req, res) => {
-    res.status(200).send(req.originalUrl);
+    res.status(200).send({
+        route: req.originalUrl,
+        status: 200,
+        message: "root"
+    });
 });
 
 // Endpoints list

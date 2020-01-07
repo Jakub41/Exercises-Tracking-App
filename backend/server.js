@@ -3,9 +3,11 @@ const config = require("./src/config/config");
 
 // Requiring libs
 const express = require("express");
+const listEndpoints = require("express-list-endpoints");
 const cors = require("cors");
 const morgan = require("morgan");
 const logger = require("./src/logging/logger");
+
 
 const app = express();
 const port = config.server.port || 5000;
@@ -19,6 +21,9 @@ app.use(morgan("combined", { stream: logger.stream }));
 app.use((req, res) => {
     res.status(200).send(req.originalUrl);
 });
+
+// Endpoints list
+console.log(listEndpoints(app));
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);

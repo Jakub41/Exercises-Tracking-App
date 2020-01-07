@@ -1,5 +1,5 @@
 // Requiring libs Loggly & Winston
-const Loggly = require("winston-loggly-bulk").Loggly;
+const { Loggly } = require("winston-loggly-bulk");
 const winston = require("winston");
 // Loggly config
 const config = require("../config/config");
@@ -13,7 +13,7 @@ const logger = winston.createLogger({
 });
 // Logging stream
 logger.stream = {
-    write: (info) => {
+    write: info => {
         logger.info(info);
     }
 };

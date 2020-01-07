@@ -109,7 +109,7 @@ typings/
 # nuxt.js build output
 .nuxt
 
-# react / gatsby 
+# react / gatsby
 public/
 
 # vuepress build output
@@ -134,5 +134,21 @@ public/
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
+
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
 
 # End of https://www.gitignore.io/api/node,macos,do

@@ -13,6 +13,10 @@ const port = config.server.port || 5000;
 
 app.use(cors());
 app.use(express.json());
+
+// Main Routing
+app.use(require("./src/routes/index.routes"));
+
 // Morgan streams to Winston instead of directly to console
 // Showing logs on Loggly tail board online
 app.use(morgan("combined", { stream: logger.stream }));

@@ -10,6 +10,7 @@ module.exports = {
     db: {
         port: process.env.DB_PORT,
         url: process.env.DB_URL,
+        name: process.env.DB_NAME
     },
     // Winston config with Loggly access
     loggly: {
@@ -18,5 +19,4 @@ module.exports = {
         tags: ["Winston-NodeJS"],
         json: true
     },
-
 };
